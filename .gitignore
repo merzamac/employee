@@ -1,0 +1,6 @@
+.idea
+*.txt
+migrations/
+db.sqlite3
+applications/**/migrations
+**/*.cpython-310.pyc

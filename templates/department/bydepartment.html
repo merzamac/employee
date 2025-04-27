@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+By Department
+{% endblock title %}
+
+{% block content %}
+{% include "includes/header.html" %}
+    <div class="grid-container">
+        <div class="grid-x">
+            <h1 class="cell">Lista de empleados del departamento de </h1>
+            <div class="cell">
+                <table class="hover">
+                  <thead>
+                    <tr>
+                      <th width="auto">ID</th>
+                      <th>NOMBRE</th>
+                      <th width="auto">APELLIDO</th>
+                      <th width="auto">DEPARTAMENTO</th>
+                        <th width="auto">ACCION</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                  {% for worker in object_list %}
+                    <tr>
+                        <td>{{worker.id}}</td>
+                        <td>{{worker.first_name}}</td>
+                        <td>{{worker.second_name}}</td>
+                        <td>{{worker.department}}</td>
+                        <td><a href=" {% url 'app_worker:detail' worker.id %} " class="button">More</a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

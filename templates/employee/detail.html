@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+Detail:Employee
+{% endblock title %}
+
+{% block content %}
+{% include 'includes/header.html' %}
+<div class="grid-container">
+    <div class="grid-x">
+        <div class="cell">
+            <h1>Detalles de empleado {{object.first_name}}</h1>
+        </div>
+        <div class="cell">
+            <p>{{object.first_name}}</p>
+            <p>{{object.second_name}}</p>
+            <p>{{object.job}}</p>
+            <p>{{object.department}}</p>
+
+            <div class="">
+                <h2>habilidades</h2>
+                {% for skill in  object.skills.all %}
+                 <p>{{skill}}</p>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock content %}
+
